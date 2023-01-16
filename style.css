@@ -1,0 +1,14 @@
+.card-container {
+    width: 25%; /* largura de cada carta */
+    display: inline-block; /* exibe cada carta em uma linha */
+    margin: 10px; /* adiciona margem */
+    text-align: center; /* centraliza o texto */
+    border: 1px solid black; /* adiciona borda */
+    padding: 10px; /* adiciona espaçamento interno */
+    vertical-align: top; /* alinha as cartas no topo */
+    text-align:center; /* centralizar o texto*/
+}
+img{
+    display: block; /* para centralizar a imagem*/
+    margin: 0 auto; /* centralizar a imagem*/
+}
