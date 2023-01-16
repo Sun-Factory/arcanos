@@ -33,34 +33,34 @@
 {name: "O Sol", resumo:" Sucesso, realização e positividade", desc: "O Sol significa que boas energias estão em jogo. Quando esse Arcano Maior aparece na leitura, traz todo seu brilho para o momento. A carta sugere otimismo e abundância, indicando que o sucesso parece ser inevitável. O Sol traz energia para realizar, nos enche de confiança e ilumina nosso caminho. Qualquer situação em questão recebe seu brilho e pode ser resolvida. Esse Arcano Maior é a própria representação da vida e da luz. Ou seja, se você estava passando por tempos difíceis, ou alguma situação parecia sem solução, essa carta vem para indicar que boas coisas virão. O Sol traz otimismo, confiança e energia para que tudo se resolva e melhore.", img: "arcano_20.jpg"}, 
 {name: "O Julgamento", resumo:" Novos ciclos, renascimento", desc: "Quando a carta O Julgamento aparece em uma leitura, significa que um novo ciclo se inicia. Todo o seu desempenho ou os pormenores da questão serão avaliados e recompensas surgirão. Este Arcano Maior indica que está na hora de você refletir sobre a situação ou sua vida no momento a fim de obter mais consciência e elevação. Você terá uma mente mais clara e obterá as respostas que precisa. É uma carta de renascimento e muitas vezes indica que uma situação desgastada receberá uma injeção de ânimo. Ou seja, o Julgamento chegou e você deve refletir sobre sua vida, sobre o que você precisa mudar para obter êxito sobre uma situação que precisa ser alterada. Às vezes a mudança é lenta, mas com paciência, um recomeço se anuncia. Sugere perdoar, pedir perdão, deixar para trás qualquer bagagem que ainda esteja pesada. Indica que depois de tudo, um novo ciclo se iniciará. Assim, o Julgamento simboliza acima de tudo um recomeço, que dependerá de tudo que você semeou.", img: "arcano_21.jpg"}, 
 {name: "O Mundo", resumo:" Conquistas, conclusão e integração", desc: "A carta O Mundo significa que a situação em questão terá um desfecho. Esse Arcano Maior anuncia um novo começo e indica que a mudança é inevitável. As mudanças que ocorrem ou ocorrerão tendem a ser positivas, sugerindo resposta positiva. Simboliza que algo em sua vida ou relacionado à questão perguntada chegará a uma conclusão. Seja qual for o próximo passo do caminho, ele significará o início de uma nova jornada. Touro, Leão, Aquário e Escorpião estão representados nessa carta e um deles pode ser uma das respostas para sua situação atual. O Mundo indica basicamente sucesso, onde você finalmente colhe os frutos de seus esforços. Em uma leitura mais ampla, essa carta pode simbolizar o próprio mundo, eventos que acontecem a nível mundial e longas viagens podem ter influência na questão.", img: "arcano_22.jpg"}, 
-
-
-        // ...
-      ];
+];
 	  
-  function drawFourCards() {
-    var cardDisplay = document.getElementById("card-display");
-    cardDisplay.innerHTML = "";
-    for (var i = 0; i < 4; i++) {
-      var randomIndex = Math.floor(Math.random() * tarotDeck.length);
-      var randomCard = tarotDeck[randomIndex];
-      var cardDiv = document.createElement("div");
-      cardDiv.classList.add("card-container");
+function drawFourCards() {
+  var cardDisplay = document.getElementById("card-display");
+  cardDisplay.innerHTML = "";
+  for (var i = 0; i < 4; i++) {
+    var randomIndex = Math.floor(Math.random() * tarotDeck.length);
+    var randomCard = tarotDeck[randomIndex];
+    var cardDiv = document.createElement("div");
+    cardDiv.classList.add("card-container");
+    var cardImg = document.createElement("img");
+    cardImg.src = "back.jpg";
+    cardImg.addEventListener("click", function() {
+      this.src = randomCard.img;
       var cardName = document.createElement("h1");
       cardName.innerHTML = randomCard.name;
       var cardResumo = document.createElement("h2");
       cardResumo.innerHTML = randomCard.resumo;
-      var cardImg = document.createElement("img");
-      cardImg.src = randomCard.img;
       var cardDesc = document.createElement("p");
       cardDesc.innerHTML = randomCard.desc;
-      cardDiv.appendChild(cardName);
-      cardDiv.appendChild(cardImg);
-      cardDiv.appendChild(cardResumo);
-      cardDiv.appendChild(cardDesc);
-      cardDisplay.appendChild(cardDiv);
-    }
+      this.parentNode.appendChild(cardName);
+      this.parentNode.appendChild(cardResumo);
+      this.parentNode.appendChild(cardDesc);
+    });
+    cardDiv.appendChild(cardImg);
+    cardDisplay.appendChild(cardDiv);
   }
+}
 
   
 </script>
